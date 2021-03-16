@@ -5,7 +5,7 @@ plugins {
     id("kr.entree.spigradle") version "2.2.3"
 }
 
-group = "org.example"
+group = "kr.myoung2"
 version = "1.0.0"
 
 repositories {
@@ -27,8 +27,23 @@ spigot {
     authors = listOf("명이")
     apiVersion = project.property("apiVersion").toString()
     //depends = listOf("ProtocolLib")
+    name = "PlayerRidePlayer"
     commands {
-        //create("hello")
+        create("ride") {
+            permission = "ride.ride"
+            permissionMessage = "You do not have the permission!"
+        }
+        permissions {
+            create("ride.ride") {
+                description = "allow ride command"
+                defaults = "op"
+            }
+            create("ride.*") {
+                description = "All permissions"
+                defaults = "op"
+                children = mapOf("ride.ride" to true)
+            }
+        }
     }
 }
 
