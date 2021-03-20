@@ -33,15 +33,26 @@ spigot {
             permission = "ride.ride"
             permissionMessage = "You do not have the permission!"
         }
+        create("rideitem") {
+            permission = "ride.rideitem"
+            permissionMessage = "You do not have the permission!"
+        }
         permissions {
             create("ride.ride") {
                 description = "allow ride command"
                 defaults = "op"
             }
+            create("ride.rideitem") {
+                description = "allow rideitem command"
+                defaults = "op"
+            }
             create("ride.*") {
                 description = "All permissions"
                 defaults = "op"
-                children = mapOf("ride.ride" to true)
+                children = mapOf(
+                    "ride.ride" to true,
+                    "ride.rideitem" to true
+                )
             }
         }
     }
