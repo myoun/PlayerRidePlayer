@@ -1,4 +1,7 @@
-# Kotlin Paper Tamplate
-Template For PaperMC (Kotlin)
+# PlayerRidePlayer
 
-You can use this Template
+Usage : 
+```
+/ride player <player>
+/ride entity <UUID>
+```
